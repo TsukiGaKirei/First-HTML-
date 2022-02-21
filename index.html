@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Final Submission Dicoding Basic Web Programming</title>
+  <!-- CSS -->
+  <style>
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      font-size: 17px;
+    }
+
+    .topnav a.right {
+      float: right;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: rgb(0, 162, 255);
+      color: black;
+    }
+
+    .topnav a.right {
+      background-color: #ddd;
+      color: black;
+      right: 0px;
+    }
+
+    .topnav .icon {
+      display: none;
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav a:not(:first-child) {
+        display: none;
+      }
+
+      .topnav a.icon {
+        float: right;
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav.responsive {
+        position: relative;
+      }
+
+      .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+    }
+
+    /* styling header */
+    header {
+      padding: 12px;
+      text-align: center;
+      background-color: #04AA6D;
+      background-repeat: repeat;
+      color: white;
+      font-size: 20px;
+    }
+
+    article {
+      border: #04AA6D;
+      border-radius: 2pt;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 75%;
+    }
+
+    .box {
+      display: flex;
+      width: 50%;
+      border: 15px solid rgb(6, 60, 97);
+      border-radius: 1px;
+      padding: 50px;
+      margin: 20px;
+      opacity: 0.95;
+      background-image: url("assets/texture.jpg");
+    }
+
+    .container {
+      display: flex;
+      border: 2px solid black;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 0 auto;
+    }
+
+    body {
+      background-image: url("assets/body2.jpg");
+      margin: 0px;
+      text-align: justify;
+      font-family: sans-serif;
+    }
+
+    .content {
+      display: flexbox;
+      border: 2px solid black;
+      border: 2px solid black;
+
+    }
+  </style>
+
+</head>
+
+<body onload="startTime()">
+  <div class="topnav" id="myTopnav">
+    <a class="right" id="time"></a>
+    <a class="right" id="date"></a>
+    <a class="active">Home</a>
+    </a>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function startTime() {
+      const today = new Date();
+      let jam = today.getHours();
+      let menit = today.getMinutes();
+      let detik = today.getSeconds();
+      menit = checkTime(menit);
+      detik = checkTime(detik);
+      document.getElementById('time').innerHTML = jam + ":" + menit + ":" + detik
+      var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+      document.getElementById('date').innerHTML = date
+      setTimeout(startTime, 1000);
+    }
+
+    function checkTime(i) {
+      if (i < 10) { i = "0" + i };
+      return i;
+    }
+  </script>
+
+  <!-- HTML -->
+  <header>
+    <h1>Gemilang Cahyaning Adi</h1>
+    <p>Cyber Security Engineer</p>
+  </header>
+  <div class="container">
+    <article class="box" style="color: whitesmoke; ">
+      <article style="color: rgb(0, 0, 0);">
+        <h1>Pengertian Data</h1>
+        <p>Data merupakan fakta fakta mentah yang jika berdiri sendiri tidak akan memberikan informasi apapun.
+          Namun jika suatu data berdiri dengan data data yang lain dan saling terkait maka data tersebut akan membentuk
+          sebuah informasi. Pada zaman sekarang data merupakan hal krucial karena jika data pribadi kita didapatkan oleh
+          orang lain akan dapat disalah gunakan untuk hal hal yang negatif.
+        </p>
+        <img
+          src="https://lokadata.beritagar.id/storage/charts/img/kebocoran-data-menurut-sektor-juni-2020-1597308426.jpg"
+          class="center">
+        <p>Data diatas merupakan jumlah banyaknya terjadi kebocoran data di Indonesia. Dari data diatas didapatkan
+          sebuah informasi bahwa pada sektor E-Coomerce terjadi tingkat kebocoran yang tertinggi dibandingkan yang lain
+          pada tahun 2020.
+          Data diatas merupakan data valid yang didapatkan dari Yayasan Lembaga Konsumen Indonesia. Sangat mengerikan
+          bukan.
+        </p>
+
+        <p>
+          <strong> Mengapa kebocoran data dapat dibilang sebagai hal yang mengerikan?</strong><br>
+          Sekarang coba ingat lagi. Pada zaman sekarang kita dapat melakukan transaksi kartu kredit hanya dengan
+          menggunakan informasi yang ada pada kartu kredit kita.
+          Bayangkan jika informasi kartu kredit kita tanpa sengaja terekspos di sosial media dan tiba tiba tagihan kartu
+          kredit kita melunjak tanpa kita ketahui bagaimana bisa hal tersebut terjadi.
+          Selain itu dengan adanya kebocoran data, orang orang dapat dengan mudah mengetahui siapa kita yang sebenarnya.
+          Mulai dari usia kita, hobi, alamat, dan kebiasaan kebiasaan yang biasa kita lakukan.
+          Hal ini kerap disalahgunakan oleh penjahat penjahat cyber untuk kejahatan mereka sebagai contoh humman
+          trafficking. Oleh karena itu sebagai generasi melek teknologi hendaknya kita bijak dalam mengakses dunia
+          digital ini. Berhati hati dalam menuliskan hal hal apapun dan berusaha menahan diri untuk tidak melakukan
+          posting informasi pribadi yang berlebihan.
+
+        </p>
+      </article>
+    </article>
+    <aside class="box" style="height: 40%;">
+      <img style="border-radius: 50%; width:30%; height: 20%;" class="center"
+        src="https://media-exp1.licdn.com/dms/image/C5603AQESuVXYEnWCCQ/profile-displayphoto-shrink_800_800/0/1630300409248?e=1651104000&v=beta&t=UZ6uQw9DYm2ngTolZy_t2Hi4Ui01pwKu4ppkllSDSKM">
+      <p>Nama : Gemilang Cahyaning Adi<br>Lahir 15 Juni 2001<br>Mahasiswa S1-Informatika Universitas Sebelas Maret
+        <br><br>Saya merupakan siswa Bangkit Learning Path Cloud Computing yang berasal dari Surakarta. Saya memiliki
+        ketertarikan lebih
+        kepada manajemen database dan pengamanan pengamanan data yang lain.Dimana dimasa depan nanti akan saya
+        kembangkan sebagai bekal menjadi pakar Cyber Security
+        <br><br>
+        Selama berkuliah saya cenderung menjadi mahasiswa yang pasif(tidak mengikuti organisasi apapun) namun meskipun
+        tergolong pasif
+        saya sudah mengikuti dua kali kompetisi competitive programming meskipun hanya pada tahap penyisihan. Namun dari
+        sana saya mulai memiliki ketertarikan lebih
+        mendalami programming. Pada semester lalu saya melaksanakan magang sebagai full stack developer. Dari sana saya
+        belajar membuat tampilan website
+        begitu juga dengan fungsi yang ada dibalik tampilan website(backend).
+      </p>
+    </aside>
+  </div>
+  <footer style="background-color: #04AA6D; padding: 12px;">
+    <p>&copy;2022 Gemilang Cahyaining Adi<br>Universitas Sebelas Maret Informatics Students 2019</p>
+  </footer>
+</body>
+
+</html>
